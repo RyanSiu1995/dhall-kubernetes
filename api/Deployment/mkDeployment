@@ -119,6 +119,7 @@ in let mkContainer : ./Container → Types.Container =
         (map { mapKey : Text , mapValue : Text } Types.EnvVar mkEnvVar container.envVars)
     }
 
+in let mkObjectReference : Text → Types.ObjectRef =  λ(name : Text) → {name = Some name}
 
 in let mkDeployment : ./Deployment → Types.Deployment =
 
@@ -141,6 +142,8 @@ in let mkDeployment : ./Deployment → Types.Deployment =
       { containers = map ./Container Types.Container mkContainer deployment.containers
       } //
       { volumes = volumes
+      } //
+      { imagePullSecrets = Some (map Text Types.ObjectRef mkObjectReference deployment.imagePullSecrets)
       })
     }
   } //

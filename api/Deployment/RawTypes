@@ -15,4 +15,5 @@
 , EmptyVolume   = ../../types/io.k8s.api.core.v1.EmptyDirVolumeSource.dhall
 , PathVolume    = ../../types/io.k8s.api.core.v1.HostPathVolumeSource.dhall
 , IntOrString   = ../../types/io.k8s.apimachinery.pkg.util.intstr.IntOrString.dhall
+, ObjectRef     = ../../types/io.k8s.api.core.v1.LocalObjectReference.dhall
 }

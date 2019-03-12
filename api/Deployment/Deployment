@@ -3,6 +3,7 @@
 , revisionHistoryLimit : Natural
 , maxSurge             : Natural
 , maxUnavailable       : Natural
+, imagePullSecrets     : List Text
 , containers           : List ./Container
 , emptyVolumes         : List { name : Text }
 , secretVolumes        : List { name : Text }
