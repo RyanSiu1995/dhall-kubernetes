@@ -1,7 +1,6 @@
 -- Prelude
-   let Prelude = https://raw.githubusercontent.com/dhall-lang/Prelude/v3.0.0/package.dhall
-in let map  = Prelude.`List`.map
-in let kv   = Prelude.JSON.keyText
+let map  = ../Prelude/List/map
+let kv   = ../Prelude/JSON/keyText
 
 -- Kubernetes types and defaults
 in let Types   = ./RawTypes
