@@ -77,6 +77,7 @@ in let mkMount : ./Mount → Types.Mount =
     } //
     { readOnly = mount.readOnly }
 
+in let mkContainerPort : Natural → Types.ContainerPort = λ(port : Natural) → default.containerPort { containerPort = port }
 
 in let mkContainer : ./Container → Types.Container =
 
@@ -87,11 +88,10 @@ in let mkContainer : ./Container → Types.Container =
     { image = Some "${container.imageName}:${container.imageTag}"
     , imagePullPolicy = Some container.imagePullPolicy
     , ports = Optional/fold
-        Natural
+        (List Natural)
         container.port
         (Optional (List Types.ContainerPort))
-        (λ(port : Natural) → Some
-          [(default.containerPort { containerPort = port })])
+        (λ(ports : (List Natural)) → Some ( map Natural Types.ContainerPort mkContainerPort ports ))
         (None (List Types.ContainerPort))
     , resources = Some
       { limits   = Some [kv "cpu" "${Natural/show container.maxCPU}m"]

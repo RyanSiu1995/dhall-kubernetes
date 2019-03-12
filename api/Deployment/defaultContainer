@@ -6,7 +6,7 @@
 , maxCPU          = 500
 , mounts          = [] : List ./Mount
 , envVars         = [] : List { mapKey : Text, mapValue : Text }
-, port            = [] : Optional Natural
+, port            = [] : Optional (List Natural)
 , command         = [] : Optional (List Text)
 , livenessProbe   = [] : Optional ./Probe
 , readinessProbe  = [] : Optional ./Probe
