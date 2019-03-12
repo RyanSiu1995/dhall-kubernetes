@@ -9,4 +9,5 @@
 , emptyVolumes         : List { name : Text }
 , secretVolumes        : List { name : Text }
 , pathVolumes          : List { name : Text, path : Text }
+, nodeSelectors        : List { mapKey : Text, mapValue : Text }
 }
