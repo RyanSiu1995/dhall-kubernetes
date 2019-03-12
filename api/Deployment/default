@@ -5,6 +5,7 @@
 , maxUnavailable       = 0
 , imagePullSecrets     = [] : List Text
 , containers           = [] : List ./Container
+, host                 = [] : List ./Host
 , emptyVolumes         = [] : List { name : Text }
 , secretVolumes        = [] : List { name : Text }
 , pathVolumes          = [] : List { name : Text, path : Text }

@@ -4,6 +4,7 @@
 , maxSurge             : Natural
 , maxUnavailable       : Natural
 , imagePullSecrets     : List Text
+, host                 : List ./Host
 , containers           : List ./Container
 , emptyVolumes         : List { name : Text }
 , secretVolumes        : List { name : Text }

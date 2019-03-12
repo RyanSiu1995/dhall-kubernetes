@@ -16,4 +16,5 @@
 , PathVolume    = ../../types/io.k8s.api.core.v1.HostPathVolumeSource.dhall
 , IntOrString   = ../../types/io.k8s.apimachinery.pkg.util.intstr.IntOrString.dhall
 , ObjectRef     = ../../types/io.k8s.api.core.v1.LocalObjectReference.dhall
+, HostAliases = ../../types/io.k8s.api.core.v1.HostAlias.dhall
 }
