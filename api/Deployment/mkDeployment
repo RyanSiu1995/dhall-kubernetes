@@ -19,6 +19,7 @@ in let mkProbe : ./Probe → Optional Types.Probe =
     (default.probe //
       { initialDelaySeconds = Some probe.initial
       , periodSeconds = Some probe.period
+      , failureThreshold = Some probe.failureThreshold
       , httpGet = Some
         (default.httpGet
             { port = default.Int probe.port } //

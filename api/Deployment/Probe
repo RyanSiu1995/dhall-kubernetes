@@ -2,4 +2,5 @@
 , period  : Natural
 , port    : Natural
 , path    : Text
+, failureThreshold : Natural
 }
