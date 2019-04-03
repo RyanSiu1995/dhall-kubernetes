@@ -67,6 +67,15 @@ in let mkPathVolume : { name : Text, path : Text } → Types.Volume =
         (default.pathVolume { path = vol.path })
     }
 
+in let mkNfsVolume : { name : Text, ip : Text } → Types.Volume =
+
+  λ(vol : { name : Text, ip : Text }) →
+
+  default.volume
+    { name = vol.name } //
+    { nfs = Some
+        (default.nfsVolume { server = vol.ip , path = "/" })
+    }
 
 in let mkMount : ./Mount → Types.Mount =
 
@@ -132,7 +141,8 @@ in let mkDeployment : ./Deployment → Types.Deployment =
   in let emptyVolumes = map { name : Text } Types.Volume mkEmptyVolume deployment.emptyVolumes
   in let secretVolumes = map { name : Text } Types.Volume mkSecretVolume deployment.secretVolumes
   in let pathVolumes = map { name : Text, path : Text } Types.Volume mkPathVolume deployment.pathVolumes
-  in let volumes = Some (emptyVolumes # secretVolumes # pathVolumes)
+  in let nfsVolumes = map { name : Text, ip : Text } Types.Volume mkNfsVolume deployment.nfsVolumes
+  in let volumes = Some (emptyVolumes # secretVolumes # pathVolumes # nfsVolumes)
 
   in let spec = default.spec
   { selector = default.selector // { matchLabels = selector }

@@ -15,6 +15,7 @@ in
 , secretVolume  = ../../default/io.k8s.api.core.v1.SecretVolumeSource.dhall
 , emptyVolume   = ../../default/io.k8s.api.core.v1.EmptyDirVolumeSource.dhall
 , pathVolume    = ../../default/io.k8s.api.core.v1.HostPathVolumeSource.dhall
+, nfsVolume     = ../../default/io.k8s.api.core.v1.NFSVolumeSource.dhall
 , meta          = ../../default/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta.dhall
 , selector      = ../../default/io.k8s.apimachinery.pkg.apis.meta.v1.LabelSelector.dhall
 , Int           = intOrString.Int

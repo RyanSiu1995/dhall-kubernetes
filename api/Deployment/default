@@ -9,5 +9,6 @@
 , emptyVolumes         = [] : List { name : Text }
 , secretVolumes        = [] : List { name : Text }
 , pathVolumes          = [] : List { name : Text, path : Text }
+, nfsVolumes           = [] : List { name : Text, ip : Text }
 , nodeSelectors        = [] : List { mapKey : Text , mapValue : Text }
 } : ./Deployment
