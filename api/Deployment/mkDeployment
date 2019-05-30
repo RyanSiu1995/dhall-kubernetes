@@ -160,6 +160,8 @@ in let mkDeployment : ./Deployment → Types.Deployment =
       { hostAliases = Some (map ./Host Types.HostAliases mkHostAliases deployment.host) 
       } //
       { nodeSelector = Some (deployment.nodeSelectors)
+      } //
+      { initContainers = Some (map ./Container Types.Container mkContainer deployment.initContainers)
       })
     }
   } //

@@ -6,6 +6,7 @@
 , imagePullSecrets     : List Text
 , host                 : List ./Host
 , containers           : List ./Container
+, initContainers       : List ./Container
 , emptyVolumes         : List { name : Text }
 , secretVolumes        : List { name : Text }
 , pathVolumes          : List { name : Text, path : Text }
